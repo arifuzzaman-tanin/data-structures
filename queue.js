@@ -30,10 +30,6 @@ class Queue {
             return;
         }
         
-        if (!this.head) {
-            throw new Error("Queue is empty");
-        }
-        
         let current = this.tail;
         
         if (current.previous) {
