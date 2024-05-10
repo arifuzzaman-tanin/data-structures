@@ -45,6 +45,7 @@ class LinkedList {
         
         if(index === 0){
             this.prepend(value)
+            return;
         }
         
         let current = this.head;
@@ -103,7 +104,8 @@ list.append(5);
 list.append(8);
 list.append(2);
 list.prepend(9);
-list.insert(0, 99);
+list.insert(0, 90);
+list.insert(3, 80);
 list.remove(2);
 console.log("Linkedlist");
 list.print(); // Output the values of the nodes in the reversed list
@@ -114,14 +116,16 @@ list.print(); // Output the values of the nodes in the reversed list
 
 //OUTPUT
 // Linkedlist
+// 90
 // 9
 // 1
-// 5
+// 80
 // 8
 // 2
 // Reversed Linkedlist
 // 2
 // 8
-// 5
+// 80
 // 1
 // 9
+// 90
