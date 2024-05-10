@@ -30,11 +30,11 @@ class Queue {
             return;
         }
         
-        let current = this.tail;
+        let current = this.head;
         
-        if (current.previous) {
-            current.previous.next = null;
-            this.tail = current.previous;
+        if (current.next) {
+            this.head = current.next;
+            current.previous = null;
         } else {
             this.head = null;
             this.tail = null;
@@ -56,16 +56,16 @@ queue.push(2);
 queue.push(5);
 queue.push(7);
 queue.push(1);
-queue.pop();
-queue.pop();
 queue.push(44);
 queue.push(11);
+queue.pop();
+queue.pop();
 
 queue.printForward();
 
 // OUTPUT
-// 2
-// 5
+// 7
+// 1
 // 44
 // 11
 
