@@ -38,6 +38,15 @@ class LinkedList {
     
     // Insert a new node with the given value at the specified index
     insert(index, value) {
+        if(index < 0){
+            console.error("Index out of bounds");
+            return;
+        }
+        
+        if(index === 0){
+            this.prepend(value)
+        }
+        
         let current = this.head;
         for (let i = 0; i < index; i++) {
             if (current.next) {
@@ -94,11 +103,11 @@ list.append(5);
 list.append(8);
 list.append(2);
 list.prepend(9);
-list.insert(2, 99);
+list.insert(0, 99);
 list.remove(2);
-console.log("Linkedlist")
+console.log("Linkedlist");
 list.print(); // Output the values of the nodes in the reversed list
-console.log("Reversed Linkedlist")
+console.log("Reversed Linkedlist");
 list.reverse();
 list.print(); // Output the values of the nodes in the reversed list
 
