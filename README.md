@@ -1,4 +1,4 @@
-<p>Graph output</p>p
+<p>Graph output</p>
 <div>
   <ul>
     <li>A=> B,C,E</li>
