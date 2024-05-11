@@ -11,7 +11,7 @@ class Graph{
 
     addEdge(vertex1, vertex2){
         if(!this.adjacencyList[vertex1] || !this.adjacencyList[vertex2]){
-            console.log("Vertex not found in the graph.")
+            console.log("Vertex not found in the graph.");
             return;
         }
 
@@ -21,7 +21,7 @@ class Graph{
     
     removeVertex(vertex){
         if (!this.adjacencyList[vertex]) {
-            console.log("Vertex not found in the graph.")
+            console.log("Vertex not found in the graph.");
             return;
         }
         
@@ -63,7 +63,9 @@ graph.addEdge("C", "D");
 graph.addEdge("D", "E");
 graph.addEdge("E", "A");
 
-graph.printGraph()
+//graph.removeVertex("B");
+
+graph.printGraph();
 
 // OUTPUT
 // A=> B,C,E
