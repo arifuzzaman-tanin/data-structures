@@ -1,3 +1,4 @@
+//Brute force | O(n^2) | Loop counted 51
 function stringSegmentation(arr, str) {
     if (arr.length === 0 || str.length === 0) {
         return [];
@@ -23,9 +24,28 @@ function stringSegmentation(arr, str) {
     return segments;
 }
 
+//Optimized (Best) | O(n^2) |  Loop counted 40
+function stringSegmentation(arr, str) {
+    if (arr.length === 0 || str.length === 0) {
+        return [];
+    }
+
+    const components = new Set();
+    for (let i = 0; i < arr.length; i++) {
+        const wordLen = arr[i].length;
+        const strLen = str.length;
+        for (let j = 0; j <= strLen - wordLen; j++) {
+            if (arr[i] === str.slice(j, j + wordLen)) {
+                components.add(arr[i]);
+            }
+        }
+    }
+    return Array.from(components);
+}
+
 const arr = ['apple', 'apple', 'pear', 'pie'];
-const str = 'applepie';
-console.log(stringSegmentation(arr, str)); 
+const str = 'applepearpie';
+console.log(stringSegmentation(arr, str));
 
 // OUTPUT
-// [ 'apple', 'pie' ]
+//[ 'apple', 'pear', 'pie' ]
