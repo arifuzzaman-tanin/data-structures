@@ -1,3 +1,4 @@
+//Optimized (Best) | O(n)
 function maxSubarraySum(arr) {
     let currentBest = Number.NEGATIVE_INFINITY;
     let overallBest = Number.NEGATIVE_INFINITY;
